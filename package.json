@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Project for the iUUL Challenge 02",
   "main": "dist/server.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "clean": "rimraf ./build",
     "build": "npm run clean && tsc",
