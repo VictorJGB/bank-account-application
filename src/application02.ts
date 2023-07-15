@@ -2,25 +2,36 @@ import Address from './models/Address';
 import Client from './models/Client';
 
 const address01 = new Address(
-  '6311',
-  'Coronel Jose Maia',
-  '1',
-  'casa',
-  'Crato',
-  'Ceará'
+  '78746-570',
+  'Rua A-20',
+  '90',
+  'Casa',
+  'Rondonópolis',
+  'Mato Grosso'
 );
 const address02 = new Address(
-  '6312',
-  'Coronel Jose',
-  '2',
-  'Apartamento',
-  'Juazeiro',
-  'Ceará'
+  '25571-330',
+  'Rua Miami',
+  '180',
+  'Loteamento Pedra',
+  'São João de Meriti',
+  'Rio de Janeiro'
+);
+const address03 = new Address(
+  '51270-681',
+  'Rua Engenho Pedra Lavada',
+  '90',
+  'Apt. 67',
+  'Recife',
+  'Pernambuco'
 );
 
-const client01 = new Client(false, '000-000-000-81', 'Carlos', '123', [
-  address01,
-  address02,
-]);
+const client = new Client(
+  false,
+  '000.000.000-01',
+  'Fernanda',
+  '(88) 9 9711-2279',
+  [address01, address02, address03]
+);
 
-client01.listAddress();
+client.listAddress();

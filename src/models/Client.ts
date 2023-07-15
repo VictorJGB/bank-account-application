@@ -24,13 +24,13 @@ export default class Client extends Person {
   listAddress() {
     console.log('Cliente: ', this.Name);
     this._addressList.map((address, index) => {
-      console.log('\nEndereço', index + 1);
-      console.log('CEP:', address.CEP);
-      console.log('Logradouro:', address.PublicPlace);
-      console.log('Nº:', address.Number);
-      console.log('Complemento:', address.Complement);
-      console.log('Cidade:', address.City);
-      console.log('UF:', address.UF);
+      console.log('\n Endereço', index + 1);
+      console.log(' CEP:', address.CEP);
+      console.log(' Logradouro:', address.PublicPlace);
+      console.log(' Nº:', address.Number);
+      console.log(' Complemento:', address.Complement);
+      console.log(' Cidade:', address.City);
+      console.log(' UF:', address.UF);
     });
   }
 }
