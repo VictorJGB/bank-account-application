@@ -9,15 +9,15 @@ export default abstract class Person {
     this._phone = phone;
   }
 
-  public get CPF(): String {
+  get CPF(): String {
     return this._CPF;
   }
 
-  public get name(): String {
+  get Name(): String {
     return this._name;
   }
 
-  public get phone(): String {
+  get Phone(): String {
     return this._phone;
   }
 }
