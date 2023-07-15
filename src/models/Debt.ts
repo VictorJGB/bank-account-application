@@ -1,6 +1,4 @@
-import Account from './Account';
-
-export default class Credit {
+export default class Debt {
   private _value: number = 0;
   private _date: Date = new Date();
 

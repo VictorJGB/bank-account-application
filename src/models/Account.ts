@@ -5,16 +5,14 @@ export default abstract class Account {
     this._number = number;
   }
 
-  get number(): String {
+  get Number(): String {
     return this._number;
   }
 
-  set number(value: String) {
-    this._number = value;
-  }
-
   //Métodos a serem sobrescritos
-  Deposit(value: Number) {}
+  calculateBalance() {}
 
-  Withdraw(value: Number) {}
+  Deposit(value: number) {}
+
+  Withdraw(value: number) {}
 }
