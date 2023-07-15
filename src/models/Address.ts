@@ -25,19 +25,19 @@ export default class Address {
   get CEP(): String {
     return this._CEP;
   }
-  get publicPlace(): String {
+  get PublicPlace(): String {
     return this._publicPlace;
   }
-  get number(): String {
+  get Number(): String {
     return this._number;
   }
-  get complement(): String {
+  get Complement(): String {
     return this._complement;
   }
-  get city(): String {
+  get City(): String {
     return this._city;
   }
-  get uf(): String {
+  get UF(): String {
     return this._uf;
   }
 

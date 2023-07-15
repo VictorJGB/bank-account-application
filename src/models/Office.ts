@@ -8,8 +8,4 @@ export default class Office {
   get name() {
     return this._name;
   }
-
-  set name(value: String) {
-    this._name = value;
-  }
 }
