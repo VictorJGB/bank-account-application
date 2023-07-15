@@ -5,7 +5,7 @@ export default class Office {
     this._name = name;
   }
 
-  get name() {
+  get Name() {
     return this._name;
   }
 }
