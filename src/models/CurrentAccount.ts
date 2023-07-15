@@ -53,20 +53,27 @@ export default class CurrentAccount extends Account {
     const date = new Date();
     const credit = new Credit(value, date);
     this._depositExtract += credit.Value;
-    console.log('Depósito no valor de: ', credit.Value, 'reais realizado!');
-    console.log('Data do depósito: ', credit.Date.toUTCString);
+    console.log('\nDepósito no valor de: R$', credit.Value, 'reais realizado!');
+    console.log('Conta: ', this.Number);
+    console.log('Data do depósito: ', credit.Date.toUTCString());
+    console.log('Saldo final: R$', this.calculateBalance(), 'reais');
   }
 
   Withdraw(value: number): void {
     const date = new Date();
     const debt = new Debt(value, date);
-    if (this.calculateBalance() > 0) {
-      this._debtExtract += debt.Value;
+    this._debtExtract += debt.Value;
+
+    if (this.calculateBalance() >= 0) {
+      console.log(this.calculateBalance());
       console.log('\nDébito no valor de: R$', debt.Value, 'reais realizado!');
       console.log('Conta: ', this.Number);
-      console.log('Data do débito: ', date.toUTCString);
+      console.log('Data do débito: ', date.toUTCString());
+      console.log('Saldo final: R$', this.calculateBalance(), 'reais');
     } else {
-      console.log('\nSaldo inválido para saque!');
+      this._debtExtract -= debt.Value;
+      console.log('\nTRANSAÇÃO CANCELADA!');
+      console.log('Saldo inválido para saque no valor de: R$', value, 'reais');
       console.log('Conta: ', this.Number);
       console.log('Saldo atual: R$', this.calculateBalance());
     }
