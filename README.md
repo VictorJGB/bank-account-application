@@ -61,6 +61,8 @@ This project was created based on the iUUL residencial programm challenge #3, wh
    ```sh
    npm install
    ```
+3. Use the ``` npx ts-node src/application[app_number].ts ``` to run the use cases
+   e.g. ```npx ts-node src/application01.ts ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
