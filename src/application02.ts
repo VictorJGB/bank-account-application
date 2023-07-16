@@ -1,5 +1,5 @@
-import Address from './models/Address';
-import Client from './models/Client';
+import Address from './models/concrets/Address';
+import Client from './models/concrets/Client';
 
 const address01 = new Address(
   '78746-570',

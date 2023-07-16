@@ -1,7 +1,7 @@
-import Address from './models/Address';
-import Client from './models/Client';
-import CurrentAccount from './models/CurrentAccount';
-import SavingsAccount from './models/SavingsAccount';
+import Address from './models/concrets/Address';
+import Client from './models/concrets/Client';
+import CurrentAccount from './models/concrets/CurrentAccount';
+import SavingsAccount from './models/concrets/SavingsAccount';
 
 const currentAddress = new Address(
   '75071-690',

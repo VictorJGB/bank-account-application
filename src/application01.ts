@@ -1,4 +1,4 @@
-import Employee from './models/Employee';
+import Employee from './models/concrets/Employee';
 
 const employee01 = new Employee(
   2500.0,

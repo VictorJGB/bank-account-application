@@ -1,6 +1,6 @@
-import Person from './Person';
+import Person from '../abstracts/Person';
 import Address from './Address';
-import IUser from '../interfaces/IUser';
+import IUser from '../../interfaces/IUser';
 
 export default class Client extends Person implements IUser {
   private _vip: boolean = false;

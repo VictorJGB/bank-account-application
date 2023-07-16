@@ -1,4 +1,4 @@
-import Account from './Account';
+import Account from '../abstracts/Account';
 
 export default class Credit {
   private _value: number = 0;

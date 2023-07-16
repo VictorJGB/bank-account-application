@@ -1,4 +1,4 @@
-import Account from './Account';
+import Account from '../abstracts/Account';
 import Client from './Client';
 import Credit from './Credit';
 import Debt from './Debt';

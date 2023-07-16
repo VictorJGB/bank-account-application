@@ -1,5 +1,5 @@
-import IUser from '../interfaces/IUser';
-import Person from './Person';
+import IUser from '../../interfaces/IUser';
+import Person from '../abstracts/Person';
 
 export default class Employee extends Person implements IUser {
   private _salary: number = 0.0;

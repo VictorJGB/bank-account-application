@@ -1,4 +1,4 @@
-import Client from './Client';
+import Client from '../concrets/Client';
 
 export default abstract class Account {
   private _number: String = '';
