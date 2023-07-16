@@ -8,7 +8,6 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#demo">Demo</a></li>
       </ul>
     </li>
     <li>
@@ -28,21 +27,18 @@
 
 ## About The Project
 
-project description
+This project was created based on the iUUL residencial programm challenge #3, which consists on creating resolution to 5 applications based on a relational-model diagram
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-techs used
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+- ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- Live -->
-
-## Demo
-
-demo url
 
 <!-- GETTING STARTED -->
 
@@ -59,7 +55,7 @@ demo url
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/VictorJGB/repo_name
+   git clone https://github.com/VictorJGB/bank-account-application
    ```
 2. Install NPM packages
    ```sh
