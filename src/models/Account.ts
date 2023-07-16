@@ -20,7 +20,7 @@ export default abstract class Account {
   //Métodos a serem sobrescritos
   calculateBalance() {}
 
-  Deposit(value: number) {}
+  Deposit(value: number, isTransfer?: boolean) {}
 
   Withdraw(value: number) {}
 }

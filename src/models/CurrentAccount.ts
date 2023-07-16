@@ -30,11 +30,11 @@ export default class CurrentAccount extends Account {
   Transfer(destinationAccount: Account, value: number) {
     if (this.calculateBalance() >= 0) {
       this._debtExtract += value;
-      destinationAccount.Deposit(value);
+      destinationAccount.Deposit(value, true);
       console.log(
         '\nTransferência de R$',
         value,
-        ' reais realizada com sucesso!'
+        'reais realizada com sucesso!'
       );
       console.log('Data: ', new Date().toUTCString());
       console.log('Conta remetente: ', this.Number);
@@ -53,16 +53,22 @@ export default class CurrentAccount extends Account {
   }
 
   //Extended from Account class
-  Deposit(value: number): void {
+  Deposit(value: number, isTransfer?: boolean): void {
     const date = new Date();
     const credit = new Credit(value, date);
     this._depositExtract += credit.Value;
-    console.log('\nDepósito no valor de: R$', credit.Value, 'reais realizado!');
-    console.log('Conta: ', this.Number);
-    console.log('Dono(a) da conta:', this.Person.Name);
-    console.log('Tipo: Conta Corrente');
-    console.log('Data do depósito: ', credit.Date.toUTCString());
-    console.log('Saldo final: R$', this.calculateBalance(), 'reais');
+    if (!isTransfer) {
+      console.log(
+        '\nDepósito no valor de: R$',
+        credit.Value,
+        'reais realizado!'
+      );
+      console.log('Conta: ', this.Number);
+      console.log('Dono(a) da conta:', this.Person.Name);
+      console.log('Tipo: Conta Corrente');
+      console.log('Data do depósito: ', credit.Date.toUTCString());
+      console.log('Saldo final: R$', this.calculateBalance(), 'reais');
+    }
   }
 
   Withdraw(value: number): void {
