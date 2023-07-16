@@ -28,8 +28,10 @@ export default class CurrentAccount extends Account {
   }
 
   Transfer(destinationAccount: Account, value: number) {
+    const date = new Date();
+    const debt = new Debt(value, date);
+    this._debtExtract += debt.Value;
     if (this.calculateBalance() >= 0) {
-      this._debtExtract += value;
       destinationAccount.Deposit(value, true);
       console.log(
         '\nTransferência de R$',
@@ -43,6 +45,7 @@ export default class CurrentAccount extends Account {
       console.log('Saldo final: R$', this.calculateBalance(), 'reais');
       console.log('********************************');
       console.log('Conta destinatária: ', destinationAccount.Number);
+      console.log('Dono(a) da conta:', destinationAccount.Person.Name);
       console.log('Tipo: Conta Poupança');
       console.log(
         'Saldo final: R$',
@@ -50,6 +53,28 @@ export default class CurrentAccount extends Account {
         'reais'
       );
     }
+    // saldo inválido
+    this._debtExtract -= debt.Value;
+    console.log('\nTRANSAÇÃO CANCELADA!');
+    console.log(
+      'Saldo inválido para transferência no valor de: R$',
+      value,
+      'reais'
+    );
+    console.log('********************************');
+    console.log('Conta remetente: ', this.Number);
+    console.log('Dono(a) da conta:', this.Person.Name);
+    console.log('Tipo: Conta Corrente');
+    console.log('Saldo final: R$', this.calculateBalance(), 'reais');
+    console.log('********************************');
+    console.log('Conta destinatária: ', destinationAccount.Number);
+    console.log('Dono(a) da conta:', destinationAccount.Person.Name);
+    console.log('Tipo: Conta Poupança');
+    console.log(
+      'Saldo final: R$',
+      destinationAccount.calculateBalance(),
+      'reais'
+    );
   }
 
   //Extended from Account class
@@ -84,13 +109,12 @@ export default class CurrentAccount extends Account {
       console.log('Tipo: Conta Corrente');
       console.log('Data do débito: ', date.toUTCString());
       console.log('Saldo final: R$', this.calculateBalance(), 'reais');
-    } else {
-      this._debtExtract -= debt.Value;
-      console.log('\nTRANSAÇÃO CANCELADA!');
-      console.log('Saldo inválido para saque no valor de: R$', value, 'reais');
-      console.log('Conta: ', this.Number);
-      console.log('Tipo: Conta Corrente');
-      console.log('Saldo atual: R$', this.calculateBalance());
     }
+    this._debtExtract -= debt.Value;
+    console.log('\nTRANSAÇÃO CANCELADA!');
+    console.log('Saldo inválido para saque no valor de: R$', value, 'reais');
+    console.log('Conta: ', this.Number);
+    console.log('Tipo: Conta Corrente');
+    console.log('Saldo atual: R$', this.calculateBalance());
   }
 }

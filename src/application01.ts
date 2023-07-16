@@ -16,12 +16,15 @@ const employee02 = new Employee(
 );
 
 const showEmployee = (employee: Employee) => {
-  console.log('\nFuncionário:', employee.Name);
+  console.log('Funcionário:', employee.Name);
   console.log('CPF:', employee.CPF);
   console.log('Telefone:', employee.Phone);
   console.log('Salário:', employee.Salary);
-  console.log('Cargo:', employee.Office);
+  console.log('Cargo:', employee.Office, '\n');
 };
 
+employee01.authenticate();
 showEmployee(employee01);
+
+employee02.authenticate();
 showEmployee(employee02);

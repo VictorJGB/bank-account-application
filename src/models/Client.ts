@@ -1,7 +1,8 @@
 import Person from './Person';
 import Address from './Address';
+import IUser from '../interfaces/IUser';
 
-export default class Client extends Person {
+export default class Client extends Person implements IUser {
   private _vip: boolean = false;
   private _addressList: Array<Address> = [];
 
@@ -16,6 +17,10 @@ export default class Client extends Person {
     this._vip = vip;
     this._addressList = addressList;
   }
+  authenticate() {
+    console.log('Usuário', this.Name, 'autenticado!');
+    return true;
+  }
 
   get vip(): boolean {
     return this._vip;
@@ -23,6 +28,7 @@ export default class Client extends Person {
 
   listAddress() {
     console.log('Cliente: ', this.Name);
+    this._vip === true ? console.log('Usuário vip') : null;
     this._addressList.map((address, index) => {
       console.log('\n Endereço', index + 1);
       console.log(' CEP:', address.CEP);

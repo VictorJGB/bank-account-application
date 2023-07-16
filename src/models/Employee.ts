@@ -1,6 +1,7 @@
+import IUser from '../interfaces/IUser';
 import Person from './Person';
 
-export default class Employee extends Person {
+export default class Employee extends Person implements IUser {
   private _salary: number = 0.0;
   private _office: String = '';
 
@@ -22,5 +23,10 @@ export default class Employee extends Person {
 
   get Office(): String {
     return this._office;
+  }
+
+  authenticate() {
+    console.log('Usuário', this.Name, 'autenticado!');
+    return true;
   }
 }
