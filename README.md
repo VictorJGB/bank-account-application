@@ -37,6 +37,41 @@ This project was created based on the iUUL residencial programm challenge #3, wh
 - ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Use cases
+
+### Relational model
+![relational-model](https://github.com/VictorJGB/bank-account-application/assets/62398638/ffc9813f-2c94-4b15-980b-412556b01cc2)
+
+### Use case 1
+- Create two bank employees, a manager and an attendant.
+
+### Use case 2
+- Create a customer and add 3 addresses to it.
+- Print addresses for this customer.
+
+### Use case 3
+- Create a customer who has a CurrentAccount.
+- Make three deposits of R$100 to this Account.
+- Withdraw R$50 from this Account.
+- Print the balance value of this CurrentAccount.
+
+### Use case 4
+- Create a customer who has a CurrentAccount.
+- Make a deposit of R$1000 into this Account.
+- Create a customer that has a SavingsAccount.
+- Make a deposit of R$1000 in this Savings Account.
+- Make a transfer of R$500 from the Current Account to the Savings Account.
+- Display the balance of both accounts.
+
+### Use case 5
+- Create a customer that has a CurrentAccount
+- Make a deposit of R$300 into this CurrentAccount
+- Set the CurrentAccount limit value to R$100 reais
+- Create a customer who has a SavingsAccount
+- Make a deposit of R$100 in this Account
+- Try to make a transfer of R$1000 from the first checking account to the second savings account
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
