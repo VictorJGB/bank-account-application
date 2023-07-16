@@ -119,7 +119,9 @@ This project was created based on the iUUL residencial programm challenge #3, wh
 
 ## Usage
 
-techs version used in the project
+- NodeJS v18.15.0
+- Typescript v5.1.6
+- ts-node v10.9.1
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
