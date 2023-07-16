@@ -8,7 +8,17 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#demo">Demo</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#use-cases">Use Cases</a>
+      <ul>
+        <li><a href="#relational-model">Relational Model</a></li>
+        <li><a href="#use-case-1">Use case 1</a></li>
+        <li><a href="#use-case-2">Use case 2</a></li>
+        <li><a href="#use-case-3">Use case 3</a></li>
+        <li><a href="#use-case-4">Use case 4</a></li>
+        <li><a href="#use-case-5">Use case 5</a></li>
       </ul>
     </li>
     <li>
@@ -28,29 +38,53 @@
 
 ## About The Project
 
-project description
+This project was created based on the iUUL residencial programm challenge #3, which consists on creating resolution to 5 applications based on a relational-model diagram
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-- ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 - ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-- ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
-- ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
-- ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- Live -->
+## Use cases
 
-## Demo
+### Relational model
+![relational-model](https://github.com/VictorJGB/bank-account-application/assets/62398638/ffc9813f-2c94-4b15-980b-412556b01cc2)
 
-demo url
+### Use case 1
+- Create two bank employees, a manager and an attendant.
+
+### Use case 2
+- Create a customer and add 3 addresses to it.
+- Print addresses for this customer.
+
+### Use case 3
+- Create a customer who has a CurrentAccount.
+- Make three deposits of R$100 to this Account.
+- Withdraw R$50 from this Account.
+- Print the balance value of this CurrentAccount.
+
+### Use case 4
+- Create a customer who has a CurrentAccount.
+- Make a deposit of R$1000 into this Account.
+- Create a customer that has a SavingsAccount.
+- Make a deposit of R$1000 in this Savings Account.
+- Make a transfer of R$500 from the Current Account to the Savings Account.
+- Display the balance of both accounts.
+
+### Use case 5
+- Create a customer that has a CurrentAccount
+- Make a deposit of R$300 into this CurrentAccount
+- Set the CurrentAccount limit value to R$100 reais
+- Create a customer who has a SavingsAccount
+- Make a deposit of R$100 in this Account
+- Try to make a transfer of R$1000 from the first checking account to the second savings account
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -67,11 +101,16 @@ demo url
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/VictorJGB/repo_name
+   git clone https://github.com/VictorJGB/bank-account-application
    ```
 2. Install NPM packages
    ```sh
    npm install
+   ```
+3. Use the ``` npx ts-node src/application[app_number].ts ``` to run the use cases </br>
+   e.g.
+   ```sh
+   npx ts-node src/application01.ts
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -80,7 +119,9 @@ demo url
 
 ## Usage
 
-techs version used in the project
+- NodeJS v18.15.0
+- Typescript v5.1.6
+- ts-node v10.9.1
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
