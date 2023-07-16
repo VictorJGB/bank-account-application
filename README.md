@@ -11,6 +11,17 @@
       </ul>
     </li>
     <li>
+      <a href="#use-cases">Use Cases</a>
+      <ul>
+        <li><a href="#relational-model">Relational Model</a></li>
+        <li><a href="#use-case-1">Use case 1</a></li>
+        <li><a href="#use-case-2">Use case 2</a></li>
+        <li><a href="#use-case-3">Use case 3</a></li>
+        <li><a href="#use-case-4">Use case 4</a></li>
+        <li><a href="#use-case-5">Use case 5</a></li>
+      </ul>
+    </li>
+    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
