@@ -20,7 +20,7 @@ const showEmployee = (employee: Employee) => {
   console.log('CPF:', employee.CPF);
   console.log('Telefone:', employee.Phone);
   console.log('Salário:', employee.Salary);
-  console.log('Cargo:', employee.Office, '\n');
+  console.log('Cargo:', employee.Office);
 };
 
 employee01.authenticate();

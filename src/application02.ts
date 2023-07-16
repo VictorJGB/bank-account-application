@@ -27,11 +27,12 @@ const address03 = new Address(
 );
 
 const client = new Client(
-  false,
+  true,
   '000.000.000-01',
   'Fernanda',
   '(88) 9 9711-2279',
   [address01, address02, address03]
 );
 
+client.authenticate();
 client.listAddress();

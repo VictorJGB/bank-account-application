@@ -15,8 +15,9 @@ const client = new Client(false, '229.763.930-95', 'Victor', '(24) 3411-5788', [
   address,
 ]);
 
-const currentAccount = new CurrentAccount(1000, '001.200.100-90', client);
+const currentAccount = new CurrentAccount(0, '001.200.100-90', client);
 
+client.authenticate();
 currentAccount.Deposit(100);
 currentAccount.Deposit(100);
 currentAccount.Deposit(100);

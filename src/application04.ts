@@ -30,7 +30,7 @@ const currentClient = new Client(
   [currentAddress]
 );
 
-const currentAccount = new CurrentAccount(1500, '1108700-0', currentClient);
+const currentAccount = new CurrentAccount(0, '1108700-0', currentClient);
 
 // Conta poupança
 const savingsClient = new Client(
@@ -43,6 +43,8 @@ const savingsClient = new Client(
 
 const savingsAccount = new SavingsAccount('187345-8', savingsClient);
 
+currentClient.authenticate();
+savingsClient.authenticate();
 currentAccount.Deposit(1000);
 savingsAccount.Deposit(1000);
 currentAccount.Transfer(savingsAccount, 500);

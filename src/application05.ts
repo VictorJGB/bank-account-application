@@ -42,6 +42,9 @@ const savingsClient = new Client(
 const currentAccount = new CurrentAccount(100, '1925456-9', currentClient);
 const savingsAccount = new SavingsAccount('1925456-9', savingsClient);
 
+currentClient.authenticate();
+savingsClient.authenticate();
+
 currentAccount.Deposit(300);
 savingsAccount.Deposit(100);
 currentAccount.Transfer(savingsAccount, 1000);

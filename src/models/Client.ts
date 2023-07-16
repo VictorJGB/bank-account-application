@@ -18,7 +18,7 @@ export default class Client extends Person implements IUser {
     this._addressList = addressList;
   }
   authenticate() {
-    console.log('Usuário', this.Name, 'autenticado!');
+    console.log('\nUSUÁRIO', this.Name.toUpperCase(), 'AUTENTICADO!\n');
     return true;
   }
 

@@ -26,7 +26,7 @@ export default class Employee extends Person implements IUser {
   }
 
   authenticate() {
-    console.log('Usuário', this.Name, 'autenticado!');
+    console.log('\nUSUÁRIO', this.Name.toUpperCase(), 'AUTENTICADO!\n');
     return true;
   }
 }
