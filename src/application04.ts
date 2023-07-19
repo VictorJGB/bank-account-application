@@ -30,7 +30,7 @@ const currentClient = new Client(
   [currentAddress]
 );
 
-const currentAccount = new CurrentAccount(0, '1108700-0', currentClient);
+const currentAccount = new CurrentAccount(200, '1108700-0', currentClient);
 
 // Conta poupança
 const savingsClient = new Client(

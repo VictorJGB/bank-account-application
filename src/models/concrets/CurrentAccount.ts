@@ -12,6 +12,7 @@ export default class CurrentAccount extends Account {
   constructor(limit: number, number: string, person: Client) {
     super(number, person);
     this._limit = limit;
+    this._limitExtract = this._limit;
   }
 
   get DepositExtract(): number {
@@ -40,17 +41,12 @@ export default class CurrentAccount extends Account {
     console.log('Data: ', new Date().toUTCString());
     console.log('Conta remetente: ', this.Number);
     console.log('Dono(a) da conta:', this.Person.Name);
-    console.log('Tipo: Conta Corrente');
-    console.log('Saldo final: R$', this.calculateTotalBalance(), 'reais');
+    console.log('Saldo da conta: R$', this.calculateBalance());
+    console.log('Saldo final: R$', this.calculateTotalBalance());
     console.log('********************************');
     console.log('Conta destinatária: ', destinationAccount.Number);
     console.log('Dono(a) da conta:', destinationAccount.Person.Name);
-    console.log('Tipo: Conta Poupança');
-    console.log(
-      'Saldo final: R$',
-      destinationAccount.calculateBalance(),
-      'reais'
-    );
+    console.log('Saldo final: R$', destinationAccount.calculateBalance());
   }
 
   // Log para erro de transferência
@@ -65,17 +61,12 @@ export default class CurrentAccount extends Account {
     console.log('********************************');
     console.log('Conta remetente: ', this.Number);
     console.log('Dono(a) da conta:', this.Person.Name);
-    console.log('Tipo: Conta Corrente');
-    console.log('Saldo final: R$', this.calculateTotalBalance(), 'reais');
+    console.log('Saldo da conta:', this.calculateBalance());
+    console.log('Saldo final: R$', this.calculateTotalBalance());
     console.log('********************************');
     console.log('Conta destinatária: ', destinationAccount.Number);
-    console.log('Dono(a) da conta:', destinationAccount.Person.Name);
-    console.log('Tipo: Conta Poupança');
-    console.log(
-      'Saldo final: R$',
-      destinationAccount.calculateBalance(),
-      'reais'
-    );
+    console.log('Dono(a) da conta: R$', destinationAccount.Person.Name);
+    console.log('Saldo final: R$', destinationAccount.calculateBalance());
   }
 
   Transfer(destinationAccount: Account, value: number) {
@@ -93,15 +84,15 @@ export default class CurrentAccount extends Account {
   }
 
   // Log do depósito
-  depositLogExtract(credit: Credit, limit: number) {
+  depositLogExtract(credit: Credit) {
     console.log('\nDepósito no valor de: R$', credit.Value, 'reais realizado!');
     console.log('Conta: ', this.Number);
     console.log('Dono(a) da conta:', this.Person.Name);
     console.log('Tipo: Conta Corrente');
     console.log('Data do depósito: ', credit.Date.toUTCString());
-    console.log('Limite atual:', limit);
-    console.log('Saldo da conta:', this.calculateBalance(), 'reais');
-    console.log('Saldo total: R$', this.calculateTotalBalance(), 'reais');
+    console.log('Limite atual:', this._limitExtract);
+    console.log('Saldo da conta: R$', this.calculateBalance());
+    console.log('Saldo total: R$', this.calculateTotalBalance());
   }
 
   Deposit(value: number, isTransfer?: boolean): void {
@@ -109,7 +100,7 @@ export default class CurrentAccount extends Account {
     const credit = new Credit(value, date);
     this._depositExtract += credit.Value;
     if (!isTransfer) {
-      this.depositLogExtract(credit, value);
+      this.depositLogExtract(credit);
     }
   }
 
@@ -120,7 +111,9 @@ export default class CurrentAccount extends Account {
     console.log('Dono(a) da conta:', this.Person.Name);
     console.log('Tipo: Conta Corrente');
     console.log('Data do débito: ', debt.Date.toUTCString());
-    console.log('Saldo final: R$', this.calculateTotalBalance(), 'reais');
+    console.log('Limite:', this._limitExtract);
+    console.log('Saldo da conta: R$', this.calculateBalance());
+    console.log('Saldo final: R$', this.calculateTotalBalance());
   }
 
   // Log do erro de débito
@@ -134,6 +127,8 @@ export default class CurrentAccount extends Account {
     console.log('Conta: ', this.Number);
     console.log('Data:', debt.Date.toUTCString);
     console.log('Tipo: Conta Corrente');
+    console.log('Limite:', this._limitExtract);
+    console.log('Saldo da conta: R$', this.calculateBalance());
     console.log('Saldo atual: R$', this.calculateTotalBalance());
   }
 
@@ -143,6 +138,9 @@ export default class CurrentAccount extends Account {
     this._debtExtract += debt.Value;
 
     if (this.calculateTotalBalance() >= 0) {
+      this.withdrawLogExtract(debt);
+    } else if (this.calculateBalance() <= 0) {
+      this._limitExtract -= value;
       this.withdrawLogExtract(debt);
     } else {
       this._debtExtract -= debt.Value;
