@@ -27,7 +27,7 @@ export default class Client extends Person implements IUser {
   }
 
   listAddress() {
-    console.log('Cliente: ', this.Name);
+    console.log('Cliente:', this.Name);
     this._vip === true ? console.log('Usuário vip') : null;
     this._addressList.map((address, index) => {
       console.log('\n Endereço', index + 1);

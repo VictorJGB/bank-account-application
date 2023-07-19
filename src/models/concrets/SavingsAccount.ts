@@ -25,22 +25,21 @@ export default class SavingsAccount extends Account {
     return extractSum;
   }
 
+  depositLogExtract(credit: Credit) {
+    console.log('\nDepósito no valor de: R$', credit.Value, 'reais realizado!');
+    console.log('Conta: ', this.Number);
+    console.log('Dono(a) da conta:', this.Person.Name);
+    console.log('Tipo: Conta Poupança');
+    console.log('Data do depósito: ', credit.Date.toUTCString());
+    console.log('Saldo final: R$', this.calculateBalance(), 'reais');
+  }
+
   //Extended from Account class
   Deposit(value: number, isTransfer?: boolean): void {
     const date = new Date();
     const credit = new Credit(value, date);
     this._depositExtract += credit.Value;
     if (!isTransfer) {
-      console.log(
-        '\nDepósito no valor de: R$',
-        credit.Value,
-        'reais realizado!'
-      );
-      console.log('Conta: ', this.Number);
-      console.log('Dono(a) da conta:', this.Person.Name);
-      console.log('Tipo: Conta Poupança');
-      console.log('Data do depósito: ', credit.Date.toUTCString());
-      console.log('Saldo final: R$', this.calculateBalance(), 'reais');
     }
   }
 

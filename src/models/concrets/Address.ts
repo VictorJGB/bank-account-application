@@ -40,23 +40,4 @@ export default class Address {
   get UF(): String {
     return this._uf;
   }
-
-  set CEP(value: String) {
-    this._CEP = value;
-  }
-  set publicPlace(value: String) {
-    this._publicPlace = value;
-  }
-  set number(value: String) {
-    this._number = value;
-  }
-  set complement(value: String) {
-    this._complement = value;
-  }
-  set city(value: String) {
-    this._city = value;
-  }
-  set uf(value: String) {
-    this._uf = value;
-  }
 }
